@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Pressable } from "react-nativ
 import * as Clipboard from 'expo-clipboard';
 import Toast from 'react-native-toast-message';
 
-export function ModalPassword({senha, handleClose}){
+export function ModalPassword({senha, handleClose, salvarSenhas}){
 
   function copyToClipboard() {
     Clipboard.setStringAsync(senha);
@@ -20,7 +20,7 @@ export function ModalPassword({senha, handleClose}){
       <View style={styles.content}>
         <Text style={styles.title}>Senha gerada</Text>
 
-        <Pressable style={styles.innerPassword} onPress={copyToClipboard}>
+        <Pressable style={styles.innerPassword} onPress={salvarSenhas}>
           <Text style={styles.text}>
           {senha}
           </Text>
